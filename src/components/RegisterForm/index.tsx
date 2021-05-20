@@ -1,70 +1,136 @@
 import { Formik, Field, Form } from "formik";
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { FormStructure } from "./styles";
 
-interface Values {
-  name: string;
-  birthDate: string;
+interface User {
+  nome: string;
   cpf: string;
   cep: string;
+  logradouro: string;
+  numero: string;
+  complemento: string;
+  bairro: string;
+  cidade: string;
+  uf: string;
 }
 
-export const RegisterForm = () => {
-  const [userCep, setUserCep] = useState<string>();
-  const [fullAdress, setFullAdress] = useState();
-  const [userAdress, SetUserAdress] = useState<string>();
-  const [userCity, SetUserCity] = useState<string>();
-  const [userState, SetUserState] = useState<string>();
+export function RegisterForm() {
+  function onSubmit(values: any, actions: any) {
+    const user = {
+      nome: values.nome,
+      cpf: values.cpf,
+      cep: values.cep,
+      lagradouro: values.lagradouro,
+      numero: values.numero,
+      bairro: values.bairro,
+      cidade: values.cidade,
+      uf: values.uf,
+    };
 
+    alert("Obrigado por realiar o cadastro, entraremos em contato em breve");
+    console.log("NEW USER", user);
+  }
 
-  useEffect(() => (
-    const [fullAdress, setFullAdress] = useState();
+  function validetCpf(ev: any, setFieldValue: any) {
+    const { value } = ev.target;
+    const cpf = value?.replace(/[^0-9]/g, "");
 
-  ), [])
+    setFieldValue("cpf", cpf);
+  }
 
-  // const maybe = axios
-  //   .get(`https://ws.apicep.com/cep/${userCep}.json`)
-  //   .then((response) => setFullAdress(response.data));
+  function onBlurCep(ev: any, setFieldValue: any) {
+    const { value } = ev.target;
 
-  console.log(fullAdress);
+    const cep = value?.replace(/[^0-9]/g, "");
 
-  function onSubmit(values: Values, actions: any) {
-    setUserCep(values.cep);
+    if (cep?.length !== 8) {
+      return;
+    }
 
-    console.log("Submit", values.cep);
+    fetch(`https://viacep.com.br/ws/${cep}/json/`)
+      .then((res) => res.json())
+      .then((data) => {
+        setFieldValue("logradouro", data.logradouro);
+        setFieldValue("bairro", data.bairro);
+        setFieldValue("cidade", data.localidade);
+        setFieldValue("uf", data.uf);
+      });
   }
 
   return (
-    <>
+    <FormStructure>
       <Formik
+        onSubmit={onSubmit}
+        validateOnMount
         initialValues={{
-          name: "",
-          birthDate: "",
+          nome: "",
           cpf: "",
           cep: "",
+          logradouro: "",
+          numero: "",
+          complemento: "",
+          bairro: "",
+          cidade: "",
+          uf: "",
         }}
-        onSubmit={onSubmit}
-      >
-        <Form>
-          <label htmlFor="name">Name</label>
-          <Field id="name" name="name" placeholder="You name here"></Field>
+        render={({ isValid, setFieldValue }) => (
+          <Form>
+            <div className="form-control-group">
+              <label>Nome</label>
+              <Field name="nome" type="text" />
+            </div>
 
-          <label htmlFor="birthDate">Birth date</label>
-          <Field
-            id="birthDate"
-            name="birthDate"
-            placeholder="1997-20-02"
-          ></Field>
+            <div className="form-control-group">
+              <label>Data de nascimento</label>
+              <Field name="data-de-nascimento" type="text" />
+            </div>
 
-          <label htmlFor="cpf">CPF</label>
-          <Field id="cpf" name="cpf" placeholder="000.000.000-00"></Field>
+            <div className="form-control-group">
+              <label>CPF</label>
+              <Field
+                name="cpf"
+                type="text"
+                onBlur={(ev: any) => validetCpf(ev, setFieldValue)}
+              />
+            </div>
 
-          <label htmlFor="cep">CEP</label>
-          <Field id="cep" name="cep" placeholder="62160000"></Field>
-
-          <button type="submit">Submit</button>
-        </Form>
-      </Formik>
-    </>
+            <div className="form-control-group">
+              <label>Cep</label>
+              <Field
+                name="cep"
+                type="text"
+                onBlur={(ev: any) => onBlurCep(ev, setFieldValue)}
+              />
+            </div>
+            <div className="form-control-group">
+              <label>Logradouro</label>
+              <Field name="logradouro" type="text" />
+            </div>
+            <div className="form-control-group">
+              <label>Número</label>
+              <Field name="numero" type="text" />
+            </div>
+            <div className="form-control-group">
+              <label>Complemento</label>
+              <Field name="complemento" type="text" />
+            </div>
+            <div className="form-control-group">
+              <label>bairro</label>
+              <Field name="bairro" type="text" />
+            </div>
+            <div className="form-control-group">
+              <label>Cidade</label>
+              <Field name="cidade" type="text" />
+            </div>
+            <div className="form-control-group">
+              <label>Estado</label>
+              <Field type="text" name="uf"></Field>
+            </div>
+            <button type="submit" disabled={!isValid}>
+              Register
+            </button>
+          </Form>
+        )}
+      />
+    </FormStructure>
   );
-};
+}

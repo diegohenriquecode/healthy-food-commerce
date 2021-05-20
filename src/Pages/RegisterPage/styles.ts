@@ -1,58 +1,77 @@
 import styled from "styled-components";
 
 export const RegisterPageContainer = styled.section`
-  /* height: calc(100vh - 5rem); */
-  @media (max-width: 475px) {
-    margin-top: 0.1rem;
+  @media (max-width: 720px) {
+    height: 100vh;
+    width: 100%;
+  }
+
+  img {
+    @media (max-width: 720px) {
+      display: none;
+    }
+  }
+
+  .firstSection {
+    @media (max-width: 720px) {
+      display: none;
+    }
+
+    display: flex;
+    flex-direction: column;
     text-align: center;
+    margin-bottom: auto;
+    z-index: -1;
+
+    ul {
+      margin-top: 1rem;
+    }
+
+    li {
+      color: var(--blue-20);
+      font-weight: bold;
+      font-size: 1.5rem;
+
+      & + li {
+        color: black;
+      }
+    }
+
+    p {
+      color: var(--gray-50);
+      width: 80%;
+      margin: 0 auto;
+      font-size: 1.2rem;
+    }
+  }
+
+  h1 {
+    line-height: 4.2rem;
+    font-size: 3.2rem;
+    color: var(--violet-100);
+    margin: 5.5rem auto auto;
   }
 
   margin-top: -5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  @media (max-width: 1280px) {
-    img {
-      overflow: hidden;
-    }
-  }
-
-  @media (max-width: 475px) {
-    img {
-      display: none;
-    }
-  }
 `;
 
 export const RegisterPageSection = styled.div`
-  @media (max-width: 475px) {
+  @media (max-width: 720px) {
     margin: 0 auto;
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   max-width: 800px;
   display: inline-block;
   margin-left: auto;
   position: relative;
-
-  h1 {
-    line-height: 4.2rem;
-    font-size: 3.2rem;
-    color: var(--violet-100);
-
-    @media (max-width: 1280px) {
-      margin-left: 4rem;
-    }
-
-    @media (max-width: 768px) {
-      margin-top: 3rem;
-      font-size: 2.8rem;
-    }
-
-    @media (max-width: 475px) {
-      margin: 0;
-    }
-  }
 
   div {
     height: 1rem;
@@ -61,14 +80,6 @@ export const RegisterPageSection = styled.div`
     align-items: center;
 
     input {
-      @media (max-width: 1280px) {
-        margin-left: 4rem;
-      }
-
-      @media (max-width: 475px) {
-        margin: 0 auto;
-      }
-
       height: 3.2rem;
       width: 18rem;
       border-radius: 0.4rem;
@@ -87,11 +98,6 @@ export const RegisterPageSection = styled.div`
     }
 
     button {
-      @media (max-width: 475px) {
-        margin: 0 auto 0 0.5rem;
-        padding: 0.5rem 0.65rem;
-      }
-
       margin: 0 auto 0 1rem;
       background: var(--green-100);
       padding: 0.85rem 0.85rem;
