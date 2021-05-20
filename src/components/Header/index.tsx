@@ -1,11 +1,13 @@
 import { RegisterButton } from "../RegisterButton";
 import { ContainerHeader, HeaderContent } from "./styles";
-
+import { Link } from "react-router-dom";
 export function Header() {
   return (
     <ContainerHeader>
       <HeaderContent>
-        <h1>Healthy Food</h1>
+        <Link to="/">
+          <h1>Healthy Food</h1>
+        </Link>
 
         <nav>
           <a>HEALTHY RECIPES</a>

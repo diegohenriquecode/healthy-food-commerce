@@ -6,7 +6,6 @@ export function ServicesPage() {
     <>
       <ServicesPageSection>
         <img src={blocoServicesImage} alt="" />
-
         <div>
           <h1>
             The best services ready <br /> To serve you

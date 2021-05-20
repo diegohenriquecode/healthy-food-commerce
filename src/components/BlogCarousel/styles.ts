@@ -4,7 +4,7 @@ export const CarouselContainer = styled.div`
   width: 100%;
 
   .card {
-    margin: 4rem auto;
+    margin: 4rem 4rem;
     width: 20rem;
     height: 27rem;
     border: 1px solid inherit;
@@ -19,9 +19,14 @@ export const CarouselContainer = styled.div`
       width: 100%;
       height: 100%;
       overflow: hidden;
+      margin-top: -1rem;
     }
 
     h1 {
+      @media (max-width: 1280px) {
+        margin-top: 2rem;
+      }
+
       width: 18rem;
       margin: 1rem 1.4rem;
       color: var(--violet-100);

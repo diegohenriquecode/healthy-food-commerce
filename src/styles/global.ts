@@ -36,11 +36,16 @@ export const GlobalStyle = createGlobalStyle`
 
 
   html {
-    @media(max-width: 1080px) {
+    @media(max-width: 1280px) {
       font-size: 93.75%;
     }
-    @media(max-width: 720px) {
+    @media(max-width: 768px) {
       font-size: 87.5%;
+      
+    }
+
+    @media (max-width: 375px) {
+      font-size: 64%;
     }
   }
 

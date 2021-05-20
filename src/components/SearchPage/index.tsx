@@ -7,8 +7,7 @@ export function SearchPage() {
     <SearchPageContainer>
       <SearchPageSection>
         <h1>
-          Ready for <br />
-          Trying a new <br /> recipe?
+          Ready for Trying <br /> a new recipe?
         </h1>
         <div>
           <input type="text" placeholder="Search healthy recipes" />

@@ -6,6 +6,17 @@ export const ContainerFooter = styled.footer`
 `;
 
 export const FooterContent = styled.div`
+  @media (max-width: 1280px) {
+    max-width: 900px;
+  }
+
+  @media (max-width: 475px) {
+    height: 2rem;
+    margin-top: 3rem;
+
+    flex-direction: column;
+  }
+
   max-width: 1120px;
   height: 5rem;
   margin: 0 auto;
@@ -22,6 +33,10 @@ export const FooterContent = styled.div`
   nav {
     margin-left: auto;
     height: 5rem;
+
+    @media (max-width: 475px) {
+      margin: 0 auto;
+    }
 
     a {
       display: inline-block;

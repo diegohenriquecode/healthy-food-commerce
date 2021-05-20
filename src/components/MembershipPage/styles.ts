@@ -5,6 +5,10 @@ export const MembershipPageContainer = styled.section`
   align-items: center;
   justify-content: space-between;
   margin-top: 2rem;
+
+  img {
+    overflow: hidden;
+  }
 `;
 
 export const MembershipPageContent = styled.div`
@@ -14,7 +18,10 @@ export const MembershipPageContent = styled.div`
   position: relative;
 
   h1 {
-    /* line-height: 4.2rem; */
+    @media (max-width: 1280px) {
+      margin-left: 2rem;
+    }
+
     font-size: 2.2rem;
     font-weight: 500;
     color: var(--violet-100);
@@ -27,6 +34,10 @@ export const MembershipPageContent = styled.div`
     align-items: center;
 
     input {
+      @media (max-width: 1280px) {
+        margin-left: 2rem;
+      }
+
       height: 3.2rem;
       width: 18rem;
       border-radius: 0.4rem;

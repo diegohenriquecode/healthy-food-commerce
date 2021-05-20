@@ -5,7 +5,7 @@ export const RecipesPageBackground = styled.section`
 `;
 
 export const RecipesPageContainer = styled.div`
-  max-width: 1120px;
+  width: 100%;
   margin: 2rem auto 0 auto;
 
   display: flex;
@@ -30,6 +30,15 @@ export const RecipesPageContent = styled.div`
     }
 
     p {
+      @media (max-width: 1280px) {
+        font-size: 1.4rem;
+      }
+
+      @media (max-width: 475px) {
+        width: 80%;
+        /* font-size: 1.15rem; */
+      }
+
       font-size: 2rem;
       color: var(--purple-20);
       font-size: 1rem;
@@ -38,15 +47,30 @@ export const RecipesPageContent = styled.div`
     }
   }
   .recipesPageCardsGroup {
+    @media (max-width: 475px) {
+      flex-direction: column;
+    }
+
     max-width: 1120px;
     flex-wrap: wrap;
-    width: 70rem;
+    width: 100%;
+    margin: 3 auto;
     display: flex;
     justify-content: space-between;
 
     transition: filter 0.2s;
 
     .recipesPageCard {
+      @media (max-width: 1280px) {
+        width: 45%;
+
+        margin: 2rem auto 3rem;
+      }
+
+      @media (max-width: 475px) {
+        width: 57%;
+      }
+
       width: 48%;
       box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
         0 10px 10px rgba(0, 0, 0, 0.22);
@@ -59,6 +83,19 @@ export const RecipesPageContent = styled.div`
         display: flex;
         flex-direction: columns;
 
+        @media (max-width: 475px) {
+          flex-direction: column;
+        }
+
+        img {
+          @media (max-width: 475px) {
+            width: 100%;
+            border-radius: 0 7px 8px 0px;
+          }
+
+          width: 50%;
+        }
+
         .recipesPageCardBody {
           display: flex;
           flex-direction: column;
@@ -66,12 +103,40 @@ export const RecipesPageContent = styled.div`
           justify-content: center;
 
           p {
+            @media (max-width: 1280px) {
+              font-size: 1.8rem;
+            }
+
+            @media (max-width: 768px) {
+              margin: 0.4rem 0.2rem 0.2rem 0.6rem;
+            }
+
+            @media (max-width: 475px) {
+              margin: 1rem;
+              text-align: center;
+            }
+
             margin-left: 2rem;
             font-size: 2rem;
             font-weight: 500;
           }
 
           button {
+            @media (max-width: 1280px) {
+              margin-left: -2rem;
+            }
+
+            @media (max-width: 768px) {
+              padding: 0.4rem 1.2rem;
+              margin-left: -2.7rem;
+            }
+
+            @media (max-width: 475px) {
+              margin: 1rem;
+              text-align: center;
+              padding: 0.8rem 1.6rem;
+            }
+
             margin-left: -5rem;
             margin-top: 1rem;
             background: var(--green-100);

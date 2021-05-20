@@ -13,20 +13,20 @@ import blogImage4 from "../../assets/blog_image_4.svg";
 export function BlogCarousel() {
   const responsive = {
     superLargeDesktop: {
-      breakpoint: { max: 4000, min: 3000 },
-      items: 7,
+      breakpoint: { max: 4000, min: 1920 },
+      items: 4.5,
     },
     desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 4,
+      breakpoint: { max: 1919, min: 1024 },
+      items: 3.3,
     },
     tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 3,
+      breakpoint: { max: 1080, min: 464 },
+      items: 2.4,
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
-      items: 1,
+      items: 1.5,
     },
   };
 
@@ -35,85 +35,85 @@ export function BlogCarousel() {
       <CarouselContainer>
         <Carousel responsive={responsive}>
           <div className="card">
-            <img className="cardImage" src={blogImage1} alt="" />
+            <img className="cardImage" src={blogImage1} />
             <h1>Quick-start guide to nuts and seeds</h1>
 
             <div className="card-footer">
               <div>
-                <img src={perfilImage1} alt="" />
+                <img src={perfilImage1} />
               </div>
               <span>Kevin Ibrahim</span>
             </div>
           </div>
           <div className="card">
-            <img className="cardImage" src={blogImage2} alt="" />
+            <img className="cardImage" src={blogImage2} />
             <h1>Nutrition: Tips for Improving Your Health</h1>
 
             <div className="card-footer">
               <div>
-                <img src={perfilImage2} alt="" />
+                <img src={perfilImage2} />
               </div>
               <span>Kevin Ibrahim</span>
             </div>
           </div>
           <div className="card">
-            <img className="cardImage" src={blogImage3} alt="" />
+            <img className="cardImage" src={blogImage3} />
             <h1>Quick-start guide to nuts and seeds</h1>
 
             <div className="card-footer">
               <div>
-                <img src={perfilImage3} alt="" />
+                <img src={perfilImage3} />
               </div>
               <span>Kevin Ibrahim</span>
             </div>
           </div>
           <div className="card">
-            <img className="cardImage" src={blogImage4} alt="" />
+            <img className="cardImage" src={blogImage4} />
             <h1>Quick-start guide to nuts and seeds</h1>
 
             <div className="card-footer">
               <div>
-                <img src={perfilImage4} alt="" />
+                <img src={perfilImage4} />
               </div>
               <span>Kevin Ibrahim</span>
             </div>
           </div>
 
           <div className="card">
-            <img className="cardImage" src={blogImage1} alt="" />
+            <img className="cardImage" src={blogImage1} />
             <h1>Quick-start guide to nuts and seeds</h1>
 
             <div className="card-footer">
               <div>
-                <img src={perfilImage1} alt="" />
+                <img src={perfilImage1} />
               </div>
               <span>Kevin Ibrahim</span>
             </div>
           </div>
           <div className="card">
-            <img className="cardImage" src={blogImage2} alt="" />
+            <img className="cardImage" src={blogImage2} />
             <h1>Nutrition: Tips for Improving Your Health</h1>
 
             <div className="card-footer">
               <div>
-                <img src={perfilImage2} alt="" />
+                <img src={perfilImage2} />
               </div>
               <span>Kevin Ibrahim</span>
             </div>
           </div>
           <div className="card">
-            <img className="cardImage" src={blogImage3} alt="" />
+            <img className="cardImage" src={blogImage3} />
             <h1>Quick-start guide to nuts and seeds</h1>
 
             <div className="card-footer">
               <div>
-                <img src={perfilImage3} alt="" />
+                <img src={perfilImage3} />
               </div>
               <span>Kevin Ibrahim</span>
             </div>
           </div>
           <div className="card">
-            <img className="cardImage" src={blogImage4} alt="" />
+            <img className="cardImage" src={blogImage4} />
             <h1>Quick-start guide to nuts and seeds</h1>
 
             <div className="card-footer">

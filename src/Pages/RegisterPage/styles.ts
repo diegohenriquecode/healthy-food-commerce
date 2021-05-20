@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SearchPageContainer = styled.section`
+export const RegisterPageContainer = styled.section`
   /* height: calc(100vh - 5rem); */
   @media (max-width: 475px) {
     margin-top: 0.1rem;
@@ -25,7 +25,7 @@ export const SearchPageContainer = styled.section`
   }
 `;
 
-export const SearchPageSection = styled.div`
+export const RegisterPageSection = styled.div`
   @media (max-width: 475px) {
     margin: 0 auto;
   }

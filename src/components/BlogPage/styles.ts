@@ -15,6 +15,10 @@ export const BlogPageContainer = styled.section`
     }
 
     p {
+      @media (max-width: 1080px) {
+        font-size: 1.2rem;
+      }
+
       font-size: 2rem;
       color: var(--purple-20);
       font-size: 1rem;
